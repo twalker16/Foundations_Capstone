@@ -1,0 +1,898 @@
+@font-face {
+    font-family: 'player';
+    src: url('../Fonts/SpecialElite-Regular-Player.ttf');
+}
+@font-face {
+    font-family: 'flower';
+    src: url('../Fonts/IndieFlower-Regular.ttf');
+}
+.background{
+    position:fixed;
+    background-color: black;
+    background-image: url('../Photos/Safehouse.gif');
+    background-position: center bottom;
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    border-width: 0;
+}
+
+.diceBoarder{
+    position:relative;
+    background-color:black;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items: center;
+    border-radius: 17px;
+}
+#diceSide{
+    position:absolute;
+    height: 96px;
+    width: 96px;
+    border-radius: 17px;
+    border-color:black;
+    border-style:ridge;
+    border-width: 2px; display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items: center;
+    
+}
+#diceFace{
+    position:absolute;
+    height: 96px;
+    width: 96px;
+    border-radius: 46px;
+}
+#dot{
+    width:20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.diceValFour #dot:nth-last-of-type(1){
+    position:absolute;
+    top: 15px;
+    left: 15px;
+}
+.diceValFour #dot:nth-last-of-type(2){
+    position:absolute;
+    bottom: 15px;
+    right: 15px;
+}
+.diceValFour #dot:nth-last-of-type(3){
+    position:absolute;
+    top: 15px;
+    right: 15px;
+}
+.diceValFour #dot:nth-last-of-type(4){
+    position:absolute;
+    bottom: 15px;
+    left: 15px;
+}
+.blackDot{
+    background-color: black;
+}
+.tanDiceSide{
+    background-color: rgb(226, 217, 178);
+}
+.tanDiceFace{
+    background-color: #f5f5dc;
+}
+.redDot{
+    background-color: red;
+}
+.redDiceSide{
+    background-color: darkred;
+}
+.redDiceFace{
+    background-color: red;
+}
+.blueDot{
+    background-color: blue;
+}
+.blueDiceSide{
+    background-color: darkblue;
+}
+.blueDiceFace{
+    background-color: blue;
+}
+.greenDot{
+    background-color: green;
+}
+.greenDiceSide{
+    background-color: #2b361e;
+}
+.greenDiceFace{
+    background-color: green;
+}
+.yellowDot{
+    background-color:  yellow;
+}
+.yellowDiceSide{
+    background-color: rgb(187, 187, 2);
+}
+.yellowDiceFace{
+    background-color: yellow;
+}
+.purpleDot{
+    background-color: blueviolet;
+}
+.purpleDiceSide{
+    background-color:indigo;
+}
+.purpleDiceFace{
+    background-color:blueviolet;
+}
+.orangeDot{
+    background-color: orange;
+}
+.orangeDiceSide{
+    background-color: darkorange;
+}
+.orangeDiceFace{
+    background-color: orange;
+}
+.pinkDot{
+    background-color:rgb(255, 88, 255);
+}
+.pinkDiceSide{
+    background-color: fuchsia;
+}
+.pinkDiceFace{
+    background-color: rgb(255, 88, 255);
+}
+.whiteDot{
+    background-color: white;
+}
+.whiteDiceSide{
+    background-color: rgb(221, 221, 221);
+}
+.whiteDiceFace{
+    background-color: white;
+}
+.greyDot{
+    background-color: grey;
+}
+.greyDiceSide{
+    background-color: rgb(47, 47, 47);
+}
+.greyDiceFace{
+    background-color: grey;
+}
+.nft1Dot{
+    background-image: url('../Photos/numpyAnimated.gif');
+    background-position: center;
+    background-size: cover;
+}
+.nft1DiceSide{
+    background-image: url('../Photos/NFTNumpy.JPG');
+    background-position: center;
+    background-size: cover;
+}
+.nft1DiceFace{
+    background-image: url('../Photos/NFTNumpy.JPG');
+    border-style: groove;
+    border-width: 2px;
+    border-color: black;
+    background-position: center;
+    background-size: cover;
+}
+.nft2Dot{
+    background-image: url('../Photos/DOM.gif');
+    background-position: center;
+    background-size: cover;
+}
+.nft2DiceSide{
+    background-image: url('../Photos/NFT1.png');
+    background-position: center;
+    background-size: cover;
+}
+.nft2DiceFace{
+    background-image: url('../Photos/NFT1.png');
+    border-style: groove;
+    border-width: 2px;
+    border-color: black;
+    background-position: center;
+    background-size: cover;
+}
+.nft3Dot{
+    background-image: url('../Photos/Throw\ Rogan\ Still.gif');
+    background-position: center;
+    background-size: cover;
+}
+.nft3DiceSide{
+    background-image: url('../Photos/nft69.JPG');
+    background-position: center;
+    background-size: cover;
+}
+.nft3DiceFace{
+    background-image: url('../Photos/nft69.JPG');
+    border-style: groove;
+    border-width: 2px;
+    border-color: black;
+    background-position: center;
+    background-size: cover;
+}
+.nft4Dot{
+    background-image: url('../Photos/absolute-unit-still.gif');
+    background-position: center;
+    background-size: cover;
+}
+.nft4DiceSide{
+    background-image: url('../Photos/nft70.JPG');
+    background-position: center;
+    background-size: cover;
+}
+.nft4DiceFace{
+    background-image: url('../Photos/nft70.JPG');
+    border-style: groove;
+    border-width: 2px;
+    border-color: black;
+    background-position: center;
+    background-size: cover;
+}
+#diceCustomContainer{
+    position: fixed;
+    height: 74vh;
+    width: 30vw;
+    min-width: min-content;
+    background-color: rgba(245, 245, 220, 0.7);
+    border-radius: 20px;
+    top: 5vh;
+    left: 2vw;
+    justify-content: space-around ;
+}
+#previewCont{
+    position: absolute;
+    right: 2vw;
+    top: calc(37vh - 50px)
+}
+#diceBG{
+    position: fixed;
+    height: 35vh;
+    width: 28vw;
+    min-width: min-content;
+    /* background-color: black; */
+    /* border-radius: 20px; */
+    top: 5vh;
+    left: 3vw;
+}
+#dotCus{
+    position: fixed;
+    height: 35vh;
+    width: 28vw;
+    min-width: min-content;
+    /* background-color: black; */
+    /* border-radius: 20px; */
+    bottom: 21vh;
+    left: 3vw;
+    
+}
+#divider{
+    position: absolute;
+    background-color: #748067;
+    width:calc(24vw - 100px);
+    height:10px;
+    left: 2vw;
+    border-radius: 90%;
+    top:calc(37vh - 5px);
+}
+#tan{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    top: 1vh;
+    left: 1vw;
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:#f5f5dc ;
+
+    /* top: calc(2vh + 8vh); */
+    /* top: calc(3vh + 16vh); */
+    /* top: calc(4vh + 24vh); */
+}
+#red{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    top: 1vh;
+    left: calc(2vw + 8vh);
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:red ;
+}
+#blue{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    top: 1vh;
+    left: calc(3vw + 16vh);
+    border-width: 2px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:blue ;
+}
+#green{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    top: 1vh;
+    left: calc(4vw + 24vh);
+    border-width: 2px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:green;
+}
+#yellow{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    top: calc(2vh + 8vh);
+    left: 1vw;
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:yellow;
+
+    /* top: calc(3vh + 16vh); */
+    /* top: calc(4vh + 24vh); */
+}
+#purple{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    top: calc(2vh + 8vh);
+    left: calc(2vw + 8vh);
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:blueviolet ;
+}
+#orange{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    top: calc(2vh + 8vh);
+    left: calc(3vw + 16vh);
+    border-width: 2px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:orange ;
+}
+#pink{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    top: calc(2vh + 8vh);
+    left: calc(4vw + 24vh);
+    border-width: 2px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:rgb(255, 88, 255);
+}
+#white{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    top: calc(3vh + 16vh);
+    left: 1vw;
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:white;
+
+    /* top: calc(4vh + 24vh); */
+}
+#grey{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    top: calc(3vh + 16vh);
+    left: calc(2vw + 8vh);
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:grey ;
+}
+#nft1{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    top: calc(3vh + 16vh);
+    left: calc(3vw + 16vh);
+    border-width: 2px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:black ;
+}
+.nft1{
+    background-image: url('../Photos/NFTNumpy.JPG');
+    background-position: center;
+    background-size: cover;
+}
+.nft2{
+    background-image: url('../Photos/NFT1.png');
+    background-position: center;
+    background-size: cover;
+}
+.nft3{
+    background-image: url('../Photos/nft69.JPG');
+    background-position: center;
+    background-size: cover;
+}
+.nft4{
+    background-image: url('../Photos/nft70.JPG');
+    background-position: center;
+    background-size: cover;
+}
+#nft2{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    top: calc(3vh + 16vh);
+    left: calc(4vw + 24vh);
+    border-width: 2px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:black ;
+}
+#nft3{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    top: calc(4vh + 24vh);
+    left: 1vw;
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:black ;
+
+}
+#nft4{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    top: calc(4vh + 24vh);
+    left: calc(2vw + 8vh);
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:black ;
+}
+#nft5{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    top: calc(4vh + 24vh);
+    left: calc(3vw + 16vh);
+    border-width: 2px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:black ;
+}
+#nft6{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    top: calc(4vh + 24vh);
+    left: calc(4vw + 24vh);
+    border-width: 2px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:black ;
+}
+
+
+#blackDot{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    bottom: 1vh;
+    left: 1vw;
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:black ;
+
+    /* top: calc(2vh + 8vh); */
+    /* top: calc(3vh + 16vh); */
+    /* top: calc(4vh + 24vh); */
+}
+#redDot{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    bottom: 1vh;
+    left: calc(2vw + 8vh);
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:red ;
+}
+#blueDot{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    Bottom: 1vh;
+    left: calc(3vw + 16vh);
+    border-width: 2px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:blue ;
+}
+#greenDot{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    Bottom: 1vh;
+    left: calc(4vw + 24vh);
+    border-width: 2px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color: green;
+}
+#yellowDot{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    Bottom: calc(2vh + 8vh);
+    left: 1vw;
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:yellow;
+
+    /* top: calc(3vh + 16vh); */
+    /* top: calc(4vh + 24vh); */
+}
+#purpleDot{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    Bottom: calc(2vh + 8vh);
+    left: calc(2vw + 8vh);
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:blueviolet ;
+}
+#orangeDot{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    Bottom: calc(2vh + 8vh);
+    left: calc(3vw + 16vh);
+    border-width: 2px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color: orange;
+}
+#pinkDot{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    Bottom: calc(2vh + 8vh);
+    left: calc(4vw + 24vh);
+    border-width: 2px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:rgb(255, 88, 255);
+}
+#whiteDot{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    Bottom: calc(3vh + 16vh);
+    left: 1vw;
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:white;
+
+    /* top: calc(4vh + 24vh); */
+}
+#greyDot{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    Bottom: calc(3vh + 16vh);
+    left: calc(2vw + 8vh);
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:grey ;
+}
+#nft1Dot{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    Bottom: calc(3vh + 16vh);
+    left: calc(3vw + 16vh);
+    border-width: 2px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:black ;
+}
+#nft2Dot{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    Bottom: calc(3vh + 16vh);
+    left: calc(4vw + 24vh);
+    border-width: 2px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:black ;
+}
+#nft3Dot{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    Bottom: calc(4vh + 24vh);
+    left: 1vw;
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:black ;
+
+}
+#nft4Dot{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    Bottom: calc(4vh + 24vh);
+    left: calc(2vw + 8vh);
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:black ;
+}
+#nft5Dot{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    Bottom: calc(4vh + 24vh);
+    left: calc(3vw + 16vh);
+    border-width: 2px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:black ;
+}
+#nft6Dot{
+    position:absolute;
+    height:calc(8vh - 4px);
+    width:calc(8vh - 4px);
+    bottom: calc(4vh + 24vh);
+    left: calc(4vw + 24vh);
+    border-width: 2px;
+    border-style: groove;
+    border-radius: 5px;
+    background-color:black ;
+}
+.locked{
+    background-image: url('../Photos/Locked.gif');
+    background-position: center;
+    background-size: cover;
+}
+
+#leave{
+    position: fixed;
+    height: 8vh;
+    width: 20vw;
+    background-color: #c2ac1e;
+    bottom: 14vh;
+    left: 36.5vw;
+    font-family: 'player';
+    font-size: 6vh; ;
+    border-radius: 20px;
+}
+
+#userData{
+    position: fixed;
+    height:11vh;
+    width: 30vw;
+    bottom: 5vh;
+    left: 2vw;
+    border-radius: 20px;
+    background-color: rgba(245, 245, 220, 0.7);
+}
+
+#playerImage{
+    position:absolute;
+    height: calc(9vh - 4px);
+    width: calc(9vh - 4px);
+    border-width: 2px;
+    border-radius: 20px;
+    border-color: black;
+    top: 1vh;
+    left: 2vw;
+}
+#changeUsername{
+    position:absolute;
+    height:calc(calc(9vh - 4px)/2);
+    width: calc(9vh - 4px);
+    border-width: 2px;
+    border-radius: 20px;
+    border-color: black;
+    top: 1vh;
+    right:2vw;
+    font-family: 'player';
+}    
+#change{
+    position: absolute;
+    height:calc(calc(9vh - 4px)/2);
+    width: calc(calc(9vh - 4px) * 2);
+    bottom: 0vh;
+    left: calc(calc(9vh - 4px) + 4vw);
+}
+
+#username{
+    position: absolute;
+    height: 9vh;
+    width:calc(24vw - calc(calc(9vh - 4px) * 2));
+    /* background-color: aqua; */
+    left: calc((3vw + calc(9vh - 4px)));
+    top:1vh;
+    font-family: 'player';
+    font-size: 4vh;
+}    
+#submit{
+    position:absolute;
+    height:calc(calc(9vh - 4px)/2);
+    width: calc(9vh - 4px);
+    border-width: 2px;
+    border-radius: 20px;
+    border-color: black;
+    bottom: 1vh;
+    left: calc(calc(9vh - 4px) + 6.4vw);
+    font-family: 'player';
+}
+
+
+aside{
+    position:fixed;
+    background-color: rgb(197, 255, 255);
+    height: 69vh;
+    width: 30vw;
+    right:0px;
+    top:9vh;
+    border-radius: 3px;
+}    
+#title{
+    position: absolute;
+    font-family: 'player';
+    top:2vh;
+    right:1vw;
+    font-size: 4vh;
+}    
+#WL{
+    position: absolute;
+    font-family: 'player';
+    top:10vh;
+    right:6vw;
+    font-size: 4vh;
+}    
+#WLUD{
+    position: absolute;
+    font-family: 'player';
+    top:0vh;
+    right:-4vw;
+    font-size: 4vh;
+}    
+
+#TB{
+    position: absolute;
+    font-family: 'player';
+    top:16vh;
+    right:6vw;
+    font-size: 4vh;
+}    
+#TBUD{
+    position: absolute;
+    font-family: 'player';
+    top:0vh;
+    right:-4vw;
+    font-size: 4vh;
+}    
+#LSR{
+    position: absolute;
+    font-family: 'player';
+    top:22vh;
+    right:6vw;
+    font-size: 4vh;
+}    
+#LSRUD{
+    position: absolute;
+    font-family: 'player';
+    top:0vh;
+    right:-4vw;
+    font-size: 4vh;
+}    
+#BP{
+    position: absolute;
+    font-family: 'player';
+    top:28vh;
+    right:6vw;
+    font-size: 4vh;
+}    
+#BPUD{
+    position: absolute;
+    font-family: 'player';
+    top:0vh;
+    right:-4vw;
+    font-size: 4vh;
+}    
+#screenNFT{
+    position: absolute;
+    bottom: 1vh;
+    height: 36vh;
+    width: 26vw;
+    right:0px;
+}    
+
+#deleteProfile{
+    position:fixed;
+    height: 4vh;
+    width: 6vw;
+    bottom: 2vh;
+    right: 2vw;
+    background-color: red;
+    font-family: 'player';
+    border-style: groove;
+    border-radius: 90px;
+    border-color: black;
+
+}
+#areYouSureBG{
+    position: Fixed;
+    height: 40vh;
+    top: 10vh;
+    width: 30vw;
+    left: 35vw;
+    background-color:bisque;
+    border-radius: 90px;
+    border-style: groove;
+    border-color: black;
+    font-family: 'player';
+}
+#yes{
+    position: absolute;
+    height: 10vh;
+    width: 10vw;
+    background-color: red;
+    border-radius: 90px;
+    bottom: 4vh;
+    left:2.5vw;
+    font-family: 'player';
+    font-size: 5vh;
+}
+#cancel{
+    position: absolute;
+    height: 10vh;
+    width: 10vw;
+    background-color: green;
+    border-radius: 90px;
+    bottom: 4vh;
+    right:2.5vw;
+    font-family: 'player';
+    font-size: 5vh;
+}
+#areYouSureText{
+    position:absolute;
+    top: 4vh;
+    /* left: 1vw ; */
+    font-size: 10vh;
+    text-align: center;
+
+}

@@ -1,0 +1,465 @@
+@font-face {
+    font-family:'Title';
+    src: URL('../Fonts/RockSalt-Regular-Title.ttf');
+}
+@font-face {
+    font-family:'Shizuru';
+    src: URL('../Fonts/Shizuru-Regular.ttf');
+}
+@font-face {
+    font-family:'Special';
+    src: URL('../Fonts/SpecialElite-Regular-Player.ttf');
+}
+h1{
+    font-family:'Special';
+    font-size: 90px; 
+    height: 50px;
+    width: 0px;
+}
+.diceValue{
+    height:50px;
+    width: 50px;
+    display:flex;
+    align-items: center;
+    align-content:flex-start
+    
+    
+}
+/* Colors:
+Black: #000000
+Darkest Green: #2b361e
+Dark Beige: #c0b19b
+Dark Green: #3a4b28
+Lighter Green: #748067
+Light Beige: #ece1d2
+Light Green: #bbcea8 
+Yellow: #f6f1bc
+*/
+
+
+.background{
+    position:fixed;
+    background-color: black;
+    background-image: URL("../Photos/UnitMountian0.gif");
+    /*Heavily inspired by artwork from the album 'Departure Songs' by We Lost The Sea.*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    border-width: 0;
+}
+#numberedFunThrowables{
+    position: fixed;
+    top: 50px;
+    width: 1500px;
+    height: 200px;
+    left:calc(50vw - 750px);
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    font-family: 'Title';
+    font-size: 80px;
+    color:#c0b19b;
+    cursor: default;
+}
+#mute{
+    position:fixed;
+    top: 10px;
+    left: 20px;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    background-size: cover;
+    cursor: pointer;
+}
+.unmuted{
+    background-image: URL('../Photos/AudioON.gif');
+    background-position: center;
+    background-repeat:no-repeat
+}
+.muted{
+    background-image: URL('../Photos/Muted.gif');
+    background-position: center;
+    background-repeat:no-repeat
+
+}
+#infoButton{
+    position:fixed;
+    top: 20px;
+    right: 20px;
+    height: 50px;
+    width: 50px;
+    border: 0;
+    padding: 0;
+    
+    background-image: URL('../Photos/InfoButton.gif');
+    background-position:center;
+    background-size: cover;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+#battle{
+    position: fixed;
+    top: 550px;
+    width: 1000px;
+    height: 100px;
+    background-color: transparent;
+    left:calc(50vw - 500px);
+    cursor: pointer;
+ 
+}
+#campaign{
+    position: fixed;
+    top: 550px;
+    width: 1000px;
+    height: 100px;
+    left:calc(50vw - 500px);
+    cursor: pointer;
+}
+#safeHouseDice{
+    position: Fixed;
+    top: 750px;
+    width: 1000px;
+    height: 100px;
+    left:calc(50vw - 500px);
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.diceBoarder{
+    position:relative;
+    background-color:black;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items: center;
+    border-radius: 17px;
+}
+.diceSide{
+    position:absolute;
+    height: 96px;
+    width: 96px;
+    border-radius: 17px;
+}
+.diceFaceText{
+    position:absolute;
+    height: 96px;
+    width: 96px;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    border-radius: 34px;
+   
+}
+.diceFace{
+    position:absolute;
+    height: 96px;
+    width: 96px;
+    border-radius: 46px;
+}
+.menuDiceSide{
+    background-color: rgb(226, 217, 178);
+}
+.menuDiceFace{
+    background-color: #f5f5dc;
+}
+.menu0{
+    left:0;
+}
+.menu1{
+    left:100px;
+}
+.menuDice{
+    position:absolute;
+    top: 13px;
+    left:13px;
+    height: 70px;
+    width:70px;
+    justify-content: center;
+    
+}
+.dot{
+    display:block;
+    width:20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+}
+.diceValOne{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.diceValTwo{
+    display:flex;
+    justify-content: space-between;
+}
+.diceValTwo .dot:nth-of-type(2){
+    align-self: flex-end;
+}
+.diceValThree{
+    display:flex;
+    justify-content: space-between;
+}
+.diceValThree .dot:nth-of-type(2){
+    align-self: center;
+}
+.diceValThree .dot:nth-of-type(3){
+    align-self: flex-end;
+}
+.diceValFour .dot:nth-last-of-type(1){
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.diceValFour .dot:nth-last-of-type(2){
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.diceValFour .dot:nth-last-of-type(3){
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.diceValFour .dot:nth-last-of-type(4){
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.diceValFive{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.diceValFive .dot:nth-last-of-type(1){
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.diceValFive .dot:nth-last-of-type(2){
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.diceValFive .dot:nth-last-of-type(3){
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.diceValFive .dot:nth-last-of-type(4){
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.diceValSix{
+    display:flex;
+    justify-content: space-between;
+
+}
+.diceValSix .dot:nth-last-of-type(1){
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.diceValSix .dot:nth-last-of-type(2){
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.diceValSix .dot:nth-last-of-type(3){
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.diceValSix .dot:nth-last-of-type(4){
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.diceValSix .dot:nth-last-of-type(5){
+    align-self: center;
+}
+.diceValSix .dot:nth-last-of-type(6){
+    align-self: center;
+}
+.summary{
+    position: absolute;
+    height: 120vh;
+    width: 40vw;
+    top:0px;
+    left: 30vw;
+    background-image: URL('/Photos/ScrollTexture.jpg');
+    /* image source (Cropped): https://unsplash.com/photos/vC8wj_Kphak */
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.xButton{
+    position: absolute;
+    top: 2vh;
+    right: 5vh;
+    height: 54px;
+    width: 54px;
+    color: red;
+    font-family: 'Title';
+    font-size: xx-large;
+    cursor: pointer;
+    background-color: transparent;
+    border-color: transparent;
+}
+.header{
+    font-size: 70px;
+    font-family: 'Special';
+    position:absolute;
+    top: 15vh;
+    left: 5vh;
+}
+.rules{
+    font-size: 30px;
+    font-family: 'Special';
+    position:absolute;
+    top: 25vh;
+    left: 5vh;
+    inline-size: 35vw;
+    overflow-wrap: break-word;
+}
+
+
+
+
+
+
+
+
+.background{
+    position:absolute;
+    background-color: black;
+    background-image: URL("../Photos/UnitMountian0.gif");
+    /*Heavily inspired by artwork from the album 'Departure Songs' by We Lost The Sea.*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    border-width: 0;
+}
+.textbox{
+    position: relative;
+    bottom:0px;
+    font-family: 'Special';
+    font-size: 0px;
+    background-color: black;
+    height: 0px;
+    text-align: center;
+    transition-property: height, font-size;
+    transition-duration: 3s;
+    transition-delay: 3s;
+    transition-timing-function: ease-out;
+}
+#safeHouse{
+    position: absolute;
+    /* height: 12vh;
+    width: 12vh; */
+    top: 82vh;
+    left: 42vw; 
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    color:#f6f1bc;
+    /* background-color: aqua;
+    opacity: 10%; */
+}
+.awaitingPass{
+    color:gray;
+}
+#numpy{
+    position: absolute;
+    /* height: 12vh;
+    width: 12vh; */
+    top: 52vh;
+    right: 15vw; 
+    display: flex;
+    justify-content: center;
+    /* color:grey; */
+    /* background-color: aqua;
+    opacity: 10%; */
+}
+#rogan{
+    position: absolute;
+    /* height: 12vh;
+    width: 12vh; */
+    top: 46vh;
+    right: 46vw; 
+    display: flex;
+    justify-content: center;
+    /* color:grey; */
+    /* background-color: aqua;
+    opacity: 10%; */
+}
+#dom{
+    position: absolute;
+    /* height: 12vh; */
+    /* width: 12vh; */
+    top: 65vh;
+    right: 65vw; 
+    display: flex;
+    justify-content: center;
+    /* color:grey; */
+    /* background-color: aqua;
+    opacity: 10%; */
+}
+#joe{
+    position: absolute;
+    height: 10vh;
+    width: 10vh;
+    top: 21vh;
+    right: 2vw; 
+    display: flex;
+    justify-content: center;
+    color:grey;
+}
+#duloc{
+    position: absolute;
+    height: 10vh;
+    width: 10vh;
+    top: 22vh;
+    left: 0vw; 
+    display: flex;
+    justify-content: center;
+    color:grey;
+}
+#absoluteUnit{
+    position: absolute;
+    height: 12vh;
+    width: 16vh;
+    top: 19vh;
+    left: 44vw; 
+    display: flex;
+    justify-content: center;
+    /* color:grey; */
+    
+}
+#hide{
+    color:transparent;
+    background-color: transparent;
+    cursor:default;
+}
+.cleared{
+    color:#f6f1bc
+}

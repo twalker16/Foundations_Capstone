@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe House</title>
+    <link rel="stylesheet" href="SafeHouse.css">
+</head>
+<body>
+    <background class="background"></background>
+    
+    <section id="diceCustomContainer">
+        <section id="diceBG">
+            <div id="tan" class="color tan"></div>
+            <div id="red" class="color red"></div>
+            <div id="blue" class="color blue"></div>
+            <div id="green" class="color green"></div>
+            <div id="yellow" class="color yellow"></div>
+            <div id="purple" class="color purple"></div>
+            <div id="orange" class="color orange"></div>
+            <div id="pink" class="color pink"></div>
+            <div id="white" class="color white"></div>
+            <div id="grey" class="color grey"></div>
+            <div id="nft1" class="color nft1 locked"></div>
+            <div id="nft2" class="color nft2 locked"></div>
+            <div id="nft3" class="color nft3 locked"></div>
+            <div id="nft4" class="color nft4 locked"></div>
+            <div id="nft5" class="color nft5 locked"></div>
+            <div id="nft6" class="color nft6 locked"></div>
+            
+        </section>
+        <div id="divider"></div>
+
+        <div id='previewCont'><div class="diceBoarder"><div id="diceSide" class="tanDiceSide"><div id="diceFace" class="tanDiceFace"><div id="diceValue">
+            <span class="yourDice diceValFour"><div id="dot" class="blackDot"></div><div id="dot" class="blackDot"></div><div id="dot" class="blackDot"></div><div id="dot" class="blackDot"></div></span></div></div></div></div></div>
+        
+        <section id="dotCus">
+            <div id="blackDot" class="color blackDot"></div>
+            <div id="redDot" class="color redDot"></div>
+            <div id="blueDot" class="color blueDot"></div>
+            <div id="greenDot" class="color greenDot"></div>
+            <div id="yellowDot" class="color yellowDot"></div>
+            <div id="purpleDot" class="color purpleDot"></div>
+            <div id="orangeDot" class="color orangeDot"></div>
+            <div id="pinkDot" class="color pinkDot"></div>
+            <div id="whiteDot" class="color whiteDot" ></div>
+            <div id="greyDot" class="color greyDot"></div>
+            <div id="nft1Dot" class="color nft1Dot locked"></div>
+            <div id="nft2Dot" class="color nft2Dot locked"></div>
+            <div id="nft3Dot" class="color nft3Dot locked"></div>
+            <div id="nft4Dot" class="color nft4Dot locked"></div>
+            <div id="nft5Dot" class="color nft5Dot locked"></div>
+            <div id="nft6Dot" class="color nft6Dot locked"></div>
+        </section>
+    </section>
+
+    <footer id="userData">
+        <img id="playerImage" src="../Photos/munkey.gif">
+        <div id="username">TildoShaggins</div>
+        <button id="changeUsername">Change Username</button>
+
+        <form id="change">
+        </form>
+
+    </footer>
+
+    <button id="leave">To Campaign</button>
+
+    <aside id="stats">
+        <div id="title">Stats</div>
+        <div id="WL">Win/Loss:<div id='WLUD'>.42</div></div>
+        <div id="TB">Truth/Bluffs:<div id='TBUD'>.69</div></div>
+        <div id="LSR">Lie Success Rate:<div id='LSRUD'>.47</div></div>
+        <div id="BP">Battles Played:<div id='BPUD'>47</div></div>
+        <img id="screenNFT" src="../Photos/NFT2.png">
+    </aside>
+
+    <button id="deleteProfile">Delete Profile</button>
+
+    <form id="areYouSure">
+    </form>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="SafeHouse.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle</title>
+    <link rel="stylesheet" href="Battle.css">
+</head>
+<body>
+    <background class="background"></background>
+
+    <div id="enemy" class="absoluteUnit"></div><div id="mic"></div>
+    <button id="hide" class ='liar'>LIAR</button>
+    <section id="yourDiceContainer">
+        <div class="diceBoarder"><div class="diceSide menuDiceSide"><div class= "diceFace menuDiceFace"><div class="diceValue"><span class="yourDice"></span></div></div></div></div>
+        <div class="diceBoarder"><div class="diceSide menuDiceSide"><div class= "diceFace menuDiceFace"><div class="diceValue"><span class="yourDice"></span></div></div></div></div>
+        <div class="diceBoarder"><div class="diceSide menuDiceSide"><div class= "diceFace menuDiceFace"><div class="diceValue"><span class="yourDice"></span></div></div></div></div>
+        <div class="diceBoarder"><div class="diceSide menuDiceSide"><div class= "diceFace menuDiceFace"><div class="diceValue"><span class="yourDice"></span></div></div></div></div>
+        <div class="diceBoarder"><div class="diceSide menuDiceSide"><div class= "diceFace menuDiceFace"><div class="diceValue"><span class="yourDice"></span></div></div></div></div>
+    </section>
+
+    <section class="hide" >
+        <div class="diceBoarder"><div class="diceSide menuDiceSide"><div class= "diceFace menuDiceFace"><div class="diceValue"><span class="enemyDice"></span></div></div></div></div>
+        <div class="diceBoarder"><div class="diceSide menuDiceSide"><div class= "diceFace menuDiceFace"><div class="diceValue"><span class="enemyDice"></span></div></div></div></div>
+        <div class="diceBoarder"><div class="diceSide menuDiceSide"><div class= "diceFace menuDiceFace"><div class="diceValue"><span class="enemyDice"></span></div></div></div></div>
+        <div class="diceBoarder"><div class="diceSide menuDiceSide"><div class= "diceFace menuDiceFace"><div class="diceValue"><span class="enemyDice"></span></div></div></div></div>
+        <div class="diceBoarder"><div class="diceSide menuDiceSide"><div class= "diceFace menuDiceFace"><div class="diceValue"><span class="enemyDice"></span></div></div></div></div>
+    </section>
+  
+    <container id="cups">
+        <div id="yourCup"></div>
+        <div id="enemyCup"></div>
+    </container>
+    
+    <container id="talkBubbleContainer">
+        <talk id='hide' class="talkBubble"><banter id ='banter' class="absoluteUnitBanter"></banter></talk>
+    </container>
+
+
+    <aside id="PossibilitesContainer">
+        <text>Possible Bets</text>
+        <br>
+        <div id='onesContainer'><div id='ones'>1 =&lt; </div><div id='possibleDice1' class="diceBoarder"><div class="diceSide menuDiceSide"><div class= "diceFace menuDiceFace"><div class="diceValue"><span class="diceValOne"></span></div></div></div></div></div><br>
+        <div id='onesContainer'><div id='twos'>1 =&lt; </div><div id='possibleDice2' class="diceBoarder"><div class="diceSide menuDiceSide"><div class= "diceFace menuDiceFace"><div class="diceValue"><span class="diceValTwo"></span></div></div></div></div></div><br>
+        <div id='onesContainer'><div id='threes'>1 =&lt; </div><div id='possibleDice3' class="diceBoarder"><div class="diceSide menuDiceSide"><div class= "diceFace menuDiceFace"><div class="diceValue"><span class="diceValThree"></span></div></div></div></div></div><br>
+        <div id='onesContainer'><div id='fours'>1 =&lt; </div><div id='possibleDice4' class="diceBoarder"><div class="diceSide menuDiceSide"><div class= "diceFace menuDiceFace"><div class="diceValue"><span class="diceValFour"></span></div></div></div></div></div><br>
+        <div id='onesContainer'><div id='fives'>1 =&lt;</div> <div id='possibleDice5' class="diceBoarder"><div class="diceSide menuDiceSide"><div class= "diceFace menuDiceFace"><div class="diceValue"><span class="diceValFive"></span></div></div></div></div></div><br>
+        <div id='onesContainer'><div id='sixes'>1 =&lt;</div> <div id='possibleDice6' class="diceBoarder"><div class="diceSide menuDiceSide"><div class= "diceFace menuDiceFace"><div class="diceValue"><span class="diceValSix"></span></div></div></div></div></div><br>
+    </aside>
+
+    <form id="bettingForm" class="hide">
+        <select id="bettingNum" class="num" name="num">
+            <option value="none" selected disabled hidden># of dice</option>
+            <option id="num1" value="1">1</option>
+            <option id="num2" value="2">2</option>
+            <option id="num3" value="3">3</option>
+            <option id="num4" value="4">4</option>
+            <option id="num5" value="5">5</option>
+            <option id="num6" value="6">6</option>
+            <option id="num7" value="7">7</option>
+            <option id="num8" value="8">8</option>
+            <option id="num9" value="9">9</option>
+            <option id="num10" value="10">10</option>
+        </select>
+
+        <select id="bettingVal" class="val" name="val">
+            <option value="none" selected disabled hidden>Face Value</option>
+            <option id="val1" value="1">1</option>
+            <option id="val2" value="2">2</option>
+            <option id="val3" value="3">3</option>
+            <option id="val4" value="4">4</option>
+            <option id="val5" value="5">5</option>
+            <option id="val6" value="6">6</option>
+        </select>
+
+        <button id="bet">BET</button>
+
+    </form>
+    <div id="retry">
+        
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="Battle.js"></script>
+</body>
+</html>

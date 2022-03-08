@@ -1,0 +1,811 @@
+@font-face {
+    font-family: 'Creepster';
+    src: url("../Fonts/Creepster-Regular.ttf");
+}
+@font-face {
+    font-family: 'rogan';
+    src: url('../Fonts/BungeeShade-Regular-Kyle.ttf');
+}
+@font-face {
+    font-family: 'numpy';
+    src: url('../Fonts/PokemonHollowNormal-pyPZ-Numpy.ttf');
+}
+@font-face {
+    font-family: 'absolute-unit';
+    src: url('../Fonts/PressStart2P-Regular-Absolute-Unit.ttf');
+}
+@font-face {
+    font-family: 'dom';
+    src: url('../Fonts/Anton-Regular.ttf');
+}
+@font-face {
+    font-family: 'RockSalt';
+    src: url('../Fonts/RockSalt-Regular-Title.ttf');
+}
+@font-face {
+    font-family: 'Flower';
+    src: url('../Fonts/IndieFlower-Regular.ttf');
+}
+@keyframes playerShake{
+    0% {
+        background-image: url('../Photos/ShakeCup-og.gif');
+        top: 40vh;
+    }
+    50%{
+        background-image: url('../Photos/ShakeCup-og.gif');
+        top: 30vh;
+    }
+    100% {
+        background-image: url('../Photos/ShakeCup-og.gif');
+        top: 40vh;
+    }
+}
+@keyframes enemyShake{
+    0% {
+        background-image: url('../Photos/ShakeCup-og.gif');
+        top: 40vh;
+    }
+    50%{
+        background-image: url('../Photos/ShakeCup-og.gif');
+        top: 30vh;
+    }
+    100% {
+        background-image: url('../Photos/ShakeCup-og.gif');
+        top: 40vh;
+    }
+}
+.background{
+    position:fixed;
+    background-color: black;
+    background-image: url('../Photos/Tabletop2.jpg');
+    /* https://unsplash.com/photos/F6KC19x405c */
+    background-position: center bottom;
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    border-width: 0;
+}
+.liar{
+    position:fixed;
+    height: 100px;
+    width: 300px;
+    background-color: red;
+    color:darkred;
+    bottom: 50px;
+    right: 50px;
+    font-size: 90px;
+    font-family: 'Creepster';
+    align-self: center;
+    justify-self: center;
+    border-radius:70%;
+}
+#numpyButton{
+    position:fixed;
+    height: 100px;
+    width: 300px;
+    background-color:lightskyblue;
+    color:blue;
+    bottom: 50px;
+    right: 50px;
+    font-size: 90px;
+    font-family: 'Creepster';
+    align-self: center;
+    justify-self: center;
+    border-radius:70%;
+}
+#yourDiceContainer{
+    position:fixed;
+    top:-10px;
+    left:-10px;
+    background-image: url('/Photos/Tabletop.jpg');
+    height: 130px;
+    width: 650px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    justify-content: space-around;
+    border-color:saddlebrown;
+    border-style:ridge;
+}
+#enemyDiceContainer{
+    position:fixed;
+    top:-10px;
+    right:-10px;
+    background-image: url('/Photos/Tabletop.jpg');
+    height: 130px;
+    width: 650px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    justify-content: space-around;
+    border-color:saddlebrown;
+    border-style:ridge;
+}
+#enemy{
+    position:fixed;
+    height: 32vh;
+    width: 32vh;
+    /* background-color: aqua; */
+    
+    left: calc(50vw - 9vh)
+}
+.numpy{
+    background-image: url('../Photos/numpyAnimated.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    top: 25vh;
+}
+.rogan{
+    background-image: url('../Photos/Throw\ Rogan\ Still.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    top: 18vh;
+}
+.mic{
+    position: fixed;
+    background-image: url('../Photos/Mic.gif');
+    background-position: center;
+    background-size: cover;
+    height: 16vh;
+    width: 16vh;
+    /* background-color: blue; */
+    top: 39vh;
+    left: calc(50vw - 4vh);
+    position: absolute;
+
+}
+.dom{
+    background-image: url('../Photos/DOM.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    top: 18vh;
+}
+.absoluteUnit{
+    background-image: url('../Photos/absolute-unit-still.gif');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    top: 18vh;
+}
+
+
+.diceBoarder{
+    position:relative;
+    background-color:black;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items: center;
+    border-radius: 17px;
+}
+.diceSide{
+    position:absolute;
+    height: 96px;
+    width: 96px;
+    border-radius: 17px;
+    border-color:black;
+    border-style:ridge;
+    border-width: 2px; display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items: center;
+    
+}
+.diceFaceText{
+    position:absolute;
+    height: 96px;
+    width: 96px;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    border-radius: 34px;
+   
+}
+.diceFace{
+    position:absolute;
+    height: 96px;
+    width: 96px;
+    border-radius: 46px;
+}
+.menuDiceSide{
+    background-color: rgb(226, 217, 178);
+}
+.menuDiceFace{
+    background-color: #f5f5dc;
+}
+.menuDice{
+    position:absolute;
+    top: 13px;
+    left:13px;
+    height: 70px;
+    width:70px;
+    justify-content: center;
+    
+}
+.dot{
+    width:20px;
+    height: 20px;
+    border-radius: 50%;
+    /* background-color: black; */
+    
+}
+.diceValOne .dot:nth-of-type(1){
+    position:absolute;
+    top: 38px;
+    left: 38px;
+}
+.diceValTwo .dot:nth-of-type(1){
+    position:absolute;
+    top: 15px;
+    left: 15px;
+}
+.diceValTwo .dot:nth-of-type(2){
+    position:absolute;
+    bottom: 15px;
+    right: 15px;
+}
+.diceValThree .dot:nth-of-type(1){
+    position:absolute;
+    top: 38px;
+    left: 38px;
+}
+.diceValThree .dot:nth-of-type(2){
+    position:absolute;
+    top: 15px;
+    left: 15px;
+}
+.diceValThree .dot:nth-of-type(3){
+    position:absolute;
+    bottom: 15px;
+    right: 15px;
+}
+.diceValFour .dot:nth-last-of-type(1){
+    position:absolute;
+    top: 15px;
+    left: 15px;
+}
+.diceValFour .dot:nth-last-of-type(2){
+    position:absolute;
+    bottom: 15px;
+    right: 15px;
+}
+.diceValFour .dot:nth-last-of-type(3){
+    position:absolute;
+    top: 15px;
+    right: 15px;
+}
+.diceValFour .dot:nth-last-of-type(4){
+    position:absolute;
+    bottom: 15px;
+    left: 15px;
+}
+.diceValFive{
+    font-size: xx-small;
+} 
+.diceValFive .firstDot{
+    position:absolute;
+    bottom: 38px;
+    right: 38px;
+}
+.diceValFive .dot:nth-last-of-type(2){
+    position:absolute;
+    bottom: 15px;
+    right: 15px;
+}
+.diceValFive .dot:nth-last-of-type(3){
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+.diceValFive .dot:nth-last-of-type(4){
+    position:absolute;
+    top: 15px;
+    right: 15px;
+}
+.diceValFive .dot:nth-of-type(5){
+    position:absolute;
+    bottom: 15px;
+    left: 15px;
+}
+/* .diceValFive .dot:nth-of-type(6){
+    position:absolute;
+    bottom: 38px;
+    left: 38px;
+} */
+.diceValSix .dot:nth-last-of-type(1){
+    position:absolute;
+    top: 15px;
+    left: 15px;
+}
+.diceValSix .dot:nth-last-of-type(2){
+    position:absolute;
+    bottom: 15px;
+    right: 15px;
+}
+.diceValSix .dot:nth-last-of-type(3){
+    position:absolute;
+    top: 15px;
+    right: 15px;
+}
+.diceValSix .dot:nth-last-of-type(4){
+    position:absolute;
+    bottom: 15px;
+    left: 15px;
+}
+.diceValSix .dot:nth-last-of-type(5){
+    position:absolute;
+    bottom: 38px;
+    left: 15px;
+}
+.diceValSix .dot:nth-last-of-type(6){
+    position:absolute;
+    bottom: 38px;
+    right: 15px;
+}
+.talkBubble{
+    position:fixed;
+    height: 32vh;
+    width: 64vh;
+    background-image: url('../Photos/QuoteBox.gif');
+    background-position: center;
+    background-size: cover;
+    top: 10vh;
+    
+    right: calc(50vw - 82vh)
+}
+.roganBanter{
+    font-family: 'rogan';
+    font-size: 40px;
+    position: absolute;
+    top: 10px;
+    left: 78px;
+    width:calc(64vh - 96px);
+    /* background-color: aqua;
+    opacity: 10%; */
+    inline-size:calc(64vh - 96px);
+    overflow-wrap: break-word;
+    line-height: 48px;
+}
+.absoluteUnitBanter{
+    font-family: 'absolute-unit';
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 78px;
+    width:calc(64vh - 96px);
+    /* background-color: aqua;
+    opacity: 10%; */
+    inline-size:calc(64vh - 96px);
+    overflow-wrap: break-word;
+    line-height: 48px;
+}
+.numpyBanter{
+    font-family: 'numpy';
+    font-size: 40px;
+    position: absolute;
+    top: 10px;
+    left: 78px;
+    width:calc(64vh - 96px);
+    /* background-color: aqua;
+    opacity: 10%; */
+    inline-size:calc(64vh - 96px);
+    overflow-wrap: break-word;
+    line-height: 48px;
+}
+.domBanter{
+    font-family: 'dom';
+    font-size: 50px;
+    position: absolute;
+    top: 10px;
+    left: 78px;
+    width:calc(64vh - 96px);
+    /* background-color: aqua;
+    opacity: 10%; */
+    inline-size:calc(64vh - 96px);
+    overflow-wrap: break-word;
+    line-height: 48px;
+    font-style: italic;
+    font-weight: bolder;
+}
+aside{
+    background-image: url('../Photos/ScrollTexture.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 950px;
+    width: 250px;
+    position:absolute;
+    top: 140px;
+    left: 0px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    font-family: 'RockSalt';
+    font-size: 30px;
+}
+#onesContainer{
+    left: 100px
+}
+.ones{
+    position: absolute;
+    width:350px;
+    height: 100px; 
+    top:100px;
+    left: 50px;
+}
+.twos{
+    position: absolute;
+    width:350px;
+    height: 100px; 
+    top:100px;
+    left: 50px;
+    
+}
+.threes{
+    position: absolute;
+    width:350px;
+    height: 100px; 
+    top:100px;
+    left: 50px;
+    
+}
+.fours{
+    position: absolute;
+    width:350px;
+    height: 100px; 
+    top:100px;
+    left: 50px;
+    
+}
+.fives{
+    position: absolute;
+    width:350px;
+    height: 100px; 
+    top:100px;
+    left: 50px;
+    
+}
+.sixes{
+    position: absolute;
+    width:350px;
+    height: 100px; 
+    top:100px;
+    left: 50px;
+    
+}
+#possibleDice1{
+    position: absolute;
+    right: 40px;
+    top: 70px;
+}
+#possibleDice2{
+    position: absolute;
+    right: 40px;
+    top: 210px;
+}
+#possibleDice3{
+    position: absolute;
+    right: 40px;
+    top: 350px;
+}
+#possibleDice4{
+    position: absolute;
+    right: 40px;
+    top: 490px;
+}
+#possibleDice5{
+    position: absolute;
+    right: 40px;
+    top: 640px;
+}
+#possibleDice6{
+    position: absolute;
+    right: 40px;
+    top: 780px;
+}
+#yourCup{
+    position:fixed;
+    background-image: url('../Photos/Cup-og.gif');
+    background-position: center;
+    background-size: cover;
+    height: 42vh;
+    width: 32vh;
+    top: 40vh;
+    left:calc(50vw - 38vh);
+}
+.shake{
+    animation-name:  playerShake;
+    animation-duration: 333ms;
+    animation-iteration-count: 12;
+    animation-play-state:running;
+}
+#enemyCup{
+    position:fixed;
+    background-image: url('../Photos/Cup-og.gif');
+    background-position: center;
+    background-size: cover;
+    height: 21vh;
+    width: 16vh;
+    top: 41vh;
+    left:calc(50vw + 12vh);
+}
+.enemyShake{
+    animation-name:  enemyShake;
+    animation-duration: 333ms;
+    animation-iteration-count: 12;
+    animation-play-state:running;
+}
+form{
+    position:fixed;
+    width: calc(100vw - 620px);
+    /* width: 300px; */
+    height: 100px;
+    /* background-color: aqua; */
+    bottom:50px;
+    left: 250px
+}
+#bet{
+    position:absolute;
+    height: 100px;
+    width: 300px;
+    background-color:limegreen;
+    color:darkgreen;
+    bottom: 0px;
+    right: 50px;
+    /* right: 0px; */
+    font-size: 75px;
+    font-family: 'Flower';
+    align-self: center;
+    justify-self: center;
+    border-radius:70%;
+    /* line-height: 100px; */
+}
+.num{
+    position:absolute;
+    right:650px;
+    border-radius: 10px;
+    height:100px;
+    width: 200px;
+    font-family: 'Flower';
+    overflow-wrap: break-word;
+    font-size: 40px;
+    background-color: beige;
+
+}
+.val{
+    position:absolute;
+    right:400px;
+    height:100px;
+    width: 200px;
+    border-radius: 10px;
+    font-family: 'Flower';
+    overflow-wrap: break-word;
+    inline-size: 200px;
+    font-size: 40px;
+    background-color: beige;
+    
+    
+}
+
+
+
+#hide{
+    display: none;
+}
+.hide{
+    display: none;
+}
+.blackDot{
+    background-color: black;
+}
+.tanDiceSide{
+    background-color: rgb(226, 217, 178);
+}
+.tanDiceFace{
+    background-color: #f5f5dc;
+}
+.redDot{
+    background-color: red;
+}
+.redDiceSide{
+    background-color: darkred;
+}
+.redDiceFace{
+    background-color: red;
+}
+.blueDot{
+    background-color: blue;
+}
+.blueDiceSide{
+    background-color: darkblue;
+}
+.blueDiceFace{
+    background-color: blue;
+}
+.greenDot{
+    background-color: green;
+}
+.greenDiceSide{
+    background-color: #2b361e;
+}
+.greenDiceFace{
+    background-color: green;
+}
+.yellowDot{
+    background-color:  yellow;
+}
+.yellowDiceSide{
+    background-color: rgb(187, 187, 2);
+}
+.yellowDiceFace{
+    background-color: yellow;
+}
+.purpleDot{
+    background-color: blueviolet;
+}
+.purpleDiceSide{
+    background-color:indigo;
+}
+.purpleDiceFace{
+    background-color:blueviolet;
+}
+.orangeDot{
+    background-color: orange;
+}
+.orangeDiceSide{
+    background-color: darkorange;
+}
+.orangeDiceFace{
+    background-color: orange;
+}
+.pinkDot{
+    background-color:rgb(255, 88, 255);
+}
+.pinkDiceSide{
+    background-color: fuchsia;
+}
+.pinkDiceFace{
+    background-color: rgb(255, 88, 255);
+}
+.whiteDot{
+    background-color: white;
+}
+.whiteDiceSide{
+    background-color: rgb(221, 221, 221);
+}
+.whiteDiceFace{
+    background-color: white;
+}
+.greyDot{
+    background-color: grey;
+}
+.greyDiceSide{
+    background-color: rgb(47, 47, 47);
+}
+.greyDiceFace{
+    background-color: grey;
+}
+.nft1Dot{
+    background-image: url('../Photos/numpyAnimated.gif');
+    background-position: center;
+    background-size: cover;
+}
+.nft1DiceSide{
+    background-image: url('../Photos/NFTNumpy.JPG');
+    background-position: center;
+    background-size: cover;
+}
+.nft1DiceFace{
+    background-image: url('../Photos/NFTNumpy.JPG');
+    border-style: groove;
+    border-width: 2px;
+    border-color: black;
+    background-position: center;
+    background-size: cover;
+}
+.nft2Dot{
+    background-image: url('../Photos/DOM.gif');
+    background-position: center;
+    background-size: cover;
+}
+.nft2DiceSide{
+    background-image: url('../Photos/NFT1.png');
+    background-position: center;
+    background-size: cover;
+}
+.nft2DiceFace{
+    background-image: url('../Photos/NFT1.png');
+    border-style: groove;
+    border-width: 2px;
+    border-color: black;
+    background-position: center;
+    background-size: cover;
+}
+.nft3Dot{
+    background-image: url('../Photos/Throw\ Rogan\ Still.gif');
+    background-position: center;
+    background-size: cover;
+}
+.nft3DiceSide{
+    background-image: url('../Photos/nft69.JPG');
+    background-position: center;
+    background-size: cover;
+}
+.nft3DiceFace{
+    background-image: url('../Photos/nft69.JPG');
+    border-style: groove;
+    border-width: 2px;
+    border-color: black;
+    background-position: center;
+    background-size: cover;
+}
+.nft4Dot{
+    background-image: url('../Photos/absolute-unit-still.gif');
+    background-position: center;
+    background-size: cover;
+}
+.nft4DiceSide{
+    background-image: url('../Photos/nft70.JPG');
+    background-position: center;
+    background-position: center;
+    background-size: cover;
+}
+.nft4DiceFace{
+    background-image: url('../Photos/nft70.JPG');
+    border-style: groove;
+    border-width: 2px;
+    border-color: black;
+    background-position: center;
+    background-size: cover;
+}
+#retryBG{
+    position: Fixed;
+    height: 40vh;
+    top: 10vh;
+    width: 30vw;
+    left: 35vw;
+    background-color:bisque;
+    border-radius: 90px;
+    border-style: groove;
+    border-color: black;
+    font-family: 'player';
+}
+#yes{
+    position: absolute;
+    height: 10vh;
+    width: 10vw;
+    background-color: green;
+    border-radius: 90px;
+    bottom: 4vh;
+    left:2.5vw;
+    font-family: 'player';
+    font-size: 5vh;
+}
+#no{
+    position: absolute;
+    height: 10vh;
+    width: 10vw;
+    background-color: red;
+    border-radius: 90px;
+    bottom: 4vh;
+    right:2.5vw;
+    font-family: 'player';
+    font-size: 5vh;
+}
+#retryText{
+    position:absolute;
+    top: 4vh;
+    /* left: 1vw ; */
+    font-size: 10vh;
+    text-align: center;
+
+}
