@@ -44,7 +44,7 @@ function openInfo(){
     const header = document.createElement('div')
     header.innerText= 'How to Play'
     const rules = document.createElement('div')
-    rules.innerText=`Each player rolls 5 dice to start the game. You are betting the number of dice of a specified face value. Challanger makes the first bet.\n\nBets must be at least one more dice of any face value or the same number of dice of a higher face value.\n\nAfter betting, the next player in rotation has the option of either calling out the liar or raising the bet. \n\nWhen a liar is called the game ends. If the liar was lying then the player that called them out wins. If the liar was telling the truth, they win. \n\nSometimes rules can change depending on the scum you're playing with. Watch out for odd behavior`
+    rules.innerText=`Each player rolls 5 dice to start the game. You are betting the number of dice of a specified face value. The player challanged makes the first bet.\n\nBets must be at least one more dice of any face value or the same number of dice of a higher face value over the previous bet.\n\nAfter betting, the next player in rotation has the option of either calling out the liar or raising the bet. \n\nWhen a liar is called the game ends. If the liar was lying then the player that called them out wins. If the liar was telling the truth, they win.`
     header.classList.add('header')
     rules.classList.add('rules')
     
