@@ -335,7 +335,8 @@ function checkTruth() {
     if(previousPlayer === enemyFacing){
       document.querySelector('.talkBubble').id=''
       document.querySelector('#banter').textContent = "Haha Gotcha! Read 'em and weep"
-
+      addLoss()
+      addLieCalled()
       setTimeout(()=>{
         document.querySelector('.talkBubble').id='hide'
         retry()
@@ -343,7 +344,7 @@ function checkTruth() {
     }else{
       document.querySelector('.talkBubble').id=''
       document.querySelector('#banter').textContent = "Good game. You won fair and square"
-
+      addWin()
       setTimeout(()=>{
         document.querySelector('.talkBubble').id='hide'
         updateProgress()
@@ -356,7 +357,7 @@ function checkTruth() {
     if(previousPlayer !== enemyFacing){
       document.querySelector('.talkBubble').id=''
       document.querySelector('#banter').textContent = "Haha Gotcha! Filthy liar. I can Sei right through you"
-
+      addLoss()
       setTimeout(()=>{
         document.querySelector('.talkBubble').id='hide'
         retry()
@@ -364,7 +365,9 @@ function checkTruth() {
     }else{
       document.querySelector('.talkBubble').id=''
       document.querySelector('#banter').textContent = "I'm a terrible liar. You can Sei right through me"
-
+      addWin()
+      addLieCalled()
+      addLie()
       setTimeout(()=>{
         document.querySelector('.talkBubble').id='hide'
         updateProgress()
@@ -1093,7 +1096,58 @@ class PlayerPlayer extends Player{
     })
 
     }
-    
+function addLie(){
+  let body={
+    user_id: sessionStorage.getItem('user_id'),
+  }
+    axios.put('http://localhost:6969/Add_Lie', body)
+    .then(res=>{
+      // console.log(`Number of lies called correctly: ${res.data[0].user_lies}`)
+    })
+    .catch(err => {
+      console.log(err) 
+      alert('uh oh something went wrong')
+  })
+}
+function addLieCalled(){
+  let body={
+    user_id: sessionStorage.getItem('user_id'),
+  }
+    axios.put('http://localhost:6969/Add_Lie_Called', body)
+    .then(res=>{
+      // console.log(`Number of lies called: ${res.data[0].user_lies_called}`)
+    })
+    .catch(err => {
+      console.log(err) 
+      alert('uh oh something went wrong')
+  })
+}
+function addWin(){
+  let body={
+    user_id: sessionStorage.getItem('user_id'),
+  }
+    axios.put('http://localhost:6969/Add_Win', body)
+    .then(res=>{
+      // console.log(`Number of wins: ${res.data[0].user_wins}`)
+    })
+    .catch(err => {
+      console.log(err) 
+      alert('uh oh something went wrong')
+  })
+}
+function addLoss(){
+  let body={
+    user_id: sessionStorage.getItem('user_id'),
+  }
+    axios.put('http://localhost:6969/Add_Loss', body)
+    .then(res=>{
+      // console.log(`Number of losses: ${res.data[0].user_losses}`)
+    })
+    .catch(err => {
+      console.log(err) 
+      alert('uh oh something went wrong')
+  })
+}
     
 setEnemy(enemyFacing);
 let enemyPlayer = new EnemyPlayer(`${enemyFacing}`, 3);

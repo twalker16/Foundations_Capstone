@@ -40,11 +40,16 @@ function openInfo(){
 
     const summary = document.createElement('summary')
     summary.classList.add('summary')
+
+    const picture=document.createElement('img')
+    picture.src = "../Photos/Example.png"
+    picture.id = "examplePic"
+    summary.appendChild(picture)
     
     const header = document.createElement('div')
     header.innerText= 'How to Play'
     const rules = document.createElement('div')
-    rules.innerText=`Each player rolls 5 dice to start the game. You are betting the number of dice of a specified face value. The player challanged makes the first bet.\n\nBets must be at least one more dice of any face value or the same number of dice of a higher face value over the previous bet.\n\nAfter betting, the next player in rotation has the option of either calling out the liar or raising the bet. \n\nWhen a liar is called the game ends. If the liar was lying then the player that called them out wins. If the liar was telling the truth, they win.`
+    rules.innerText=`Each player rolls 5 dice to start the game. You are betting the number of dice of a specified face value. The player who got challanged makes the first bet.\n\nBets must be at least one more dice of any face value or the same number of dice of a higher face value over the previous bet.\n\nAfter betting, the next player in rotation has the option of either calling out the liar or raising the bet. \n\nWhen a liar is called the game ends. If the liar was lying then the player that called them out wins. If the liar was telling the truth, they win.`
     header.classList.add('header')
     rules.classList.add('rules')
     
@@ -131,19 +136,23 @@ function getProgress(){
         if(res.data[0].numpy_pass === true){
             document.querySelector('#numpy').classList.remove('awaitingPass')
             document.querySelector('#numpy').classList.add('cleared')
+            document.querySelector('#numpy').classList.add('addN')
         }
         console.log(res.data[0].numpy_pass)
         if(res.data[0].rogan_pass === true){
             document.querySelector('#rogan').classList.remove('awaitingPass')
             document.querySelector('#rogan').classList.add('cleared')
+            document.querySelector('#rogan').classList.add('addR')
         }
         if(res.data[0].dom_pass === true){
             document.querySelector('#dom').classList.remove('awaitingPass')
             document.querySelector('#dom').classList.add('cleared')
+            document.querySelector('#dom').classList.add('addD')
         }
         if(res.data[0].absolute_unit_pass === true){
             document.querySelector('#absoluteUnit').classList.remove('awaitingPass')
             document.querySelector('#absoluteUnit').classList.add('cleared')
+            document.querySelector('#absoluteUnit').classList.add('addAU')
         }
         if(res.data[0].numpy_pass === true && res.data[0].rogan_pass === true && res.data[0].dom_pass === true){
             document.querySelector('#absoluteUnit').classList.remove('locked')

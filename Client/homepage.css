@@ -296,7 +296,7 @@ Yellow: #f6f1bc
 }
 .summary{
     position: absolute;
-    height: 120vh;
+    height: 100vh;
     width: 40vw;
     top:0px;
     left: 30vw;
@@ -305,6 +305,13 @@ Yellow: #f6f1bc
     background-position:center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+#examplePic{
+    position:absolute;
+    bottom:2vh;
+    width: 36vw;
+    left:2vw;
+    height: 36vh;
 }
 .xButton{
     position: absolute;
@@ -390,8 +397,8 @@ Yellow: #f6f1bc
 }
 #numpy{
     position: absolute;
-    /* height: 12vh;
-    width: 12vh; */
+    height: 12vh;
+    width: 14vh;
     top: 52vh;
     right: 15vw; 
     display: flex;
@@ -462,4 +469,28 @@ Yellow: #f6f1bc
 }
 .cleared{
     color:#f6f1bc
+}
+.addN{
+    background-image: url('../Photos/numpyAnimated.gif');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.addR{
+    background-image: url('../Photos/Throw\ Rogan\ Still.gif');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.addD{
+    background-image: url('../Photos/DOM.gif');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.addAU{
+    background-image: url('../Photos/absolute-unit-still.gif');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
 }

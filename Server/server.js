@@ -23,5 +23,11 @@ app.put('/Change_Username', ctrl.changeUsername)
 app.delete('/Delete_User', ctrl.deleteProfile)
 app.put('/Update_Progress', ctrl.updateProgress)
 app.get('/Get_Progress', ctrl.getProgress)
+app.get('/Get_Stats', ctrl.getStats)
+app.put('/Add_Lie', ctrl.addLie)
+app.put('/Add_Lie_Called', ctrl.addLieCalled)
+app.put('/Add_Win', ctrl.addWin)
+app.put('/Add_Loss', ctrl.addLoss)
+
 
 app.listen(SERVER_PORT, ()=> console.log(`up on ${SERVER_PORT}`))

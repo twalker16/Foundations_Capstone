@@ -245,5 +245,45 @@ module.exports = {
         WHERE user_id = ${id}`)
         .then(dbRes => {res.status(200).send(dbRes[0])})
         .catch(err => console.log(err))
+    },
+    getStats: (req, res)=>{
+        const {id} = req.query
+        console.log(id)
+        sequelize.query(`SELECT user_wins, user_losses, user_lies_called, user_lies FROM users
+        WHERE user_id = ${id}`)
+        .then(dbRes => {res.status(200).send(dbRes[0])})
+        .catch(err => console.log(err))
+    },
+    addLie: (req, res)=>{
+        const {user_id} = req.body
+        sequelize.query(`UPDATE users
+        SET user_lies = user_lies + 1
+        WHERE user_id = ${user_id}`)
+        .then(dbRes => {res.status(200).send(dbRes[0])})
+        .catch(err => console.log(err))
+    },
+    addLieCalled: (req, res)=>{
+        const {user_id} = req.body
+        sequelize.query(`UPDATE users
+        SET user_lies_called = user_lies_called + 1
+        WHERE user_id = ${user_id}`)
+        .then(dbRes => {res.status(200).send(dbRes[0])})
+        .catch(err => console.log(err))
+    },
+    addWin: (req, res)=>{
+        const {user_id} = req.body
+        sequelize.query(`UPDATE users
+        SET user_wins = user_wins + 1
+        WHERE user_id = ${user_id}`)
+        .then(dbRes => {res.status(200).send(dbRes[0])})
+        .catch(err => console.log(err))
+    },
+    addLoss: (req, res)=>{
+        const {user_id} = req.body
+        sequelize.query(`UPDATE users
+        SET user_losses = user_losses + 1
+        WHERE user_id = ${user_id}`)
+        .then(dbRes => {res.status(200).send(dbRes[0])})
+        .catch(err => console.log(err))
     }
 }

@@ -164,9 +164,25 @@ function goToCampaign(){
     window.location.href='./homepage.html'
     sessionStorage.setItem('starting', false)
 }
+function getStats(){
+    axios.get(`http://localhost:6969/Get_Stats`, {
+        params:{
+            id: sessionStorage.getItem('user_id')
+        }
+    })
+    .then(res=>{
+        document.querySelector("#WLUD").textContent=(String((Math.floor((res.data[0].user_wins) / (res.data[0].user_wins + res.data[0].user_losses) * 100))/100))
+        document.querySelector("#CBUD").textContent=(String((Math.floor((res.data[0].user_lies/res.data[0].user_lies_called)*100))/100))
+        document.querySelector("#BPUD").textContent=(String(res.data[0].user_wins + res.data[0].user_losses))
+    })
+    .catch(err => {
+        console.log(err) 
+        alert('uh oh something went wrong')
+    })
+}
 
 // console.log(document.querySelector('#red'))
-
+getStats()
 getUnlocked()
 getCustomDice()
 document.querySelector('#leave').addEventListener('click', goToCampaign)
