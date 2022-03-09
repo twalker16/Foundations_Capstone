@@ -58,11 +58,11 @@ module.exports = {
 
         sequelize.query(`INSERT INTO users (username, password, recovery_email)
         VALUES('${username}', '${hashedPassword}', '${hashedEmail}');
-        INSERT INTO progress (user_id)
-        VALUES((SELECT user_id FROM users WHERE password = ${hashedPassword}))
         `)
         .then(dbRes => {res.status(200).send(dbRes[0])})
         .catch(err => console.log(err))
+        // INSERT INTO progress (user_id)
+        // VALUES((SELECT user_id FROM users WHERE username = ${username}))
     },
     login:(req, res)=>{
         const {loginUsername, loginPassword} = req.body
